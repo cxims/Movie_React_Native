@@ -5,21 +5,17 @@ import { createAppContainer,  } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs'
 
-import Homepage from './components/Homepage'
-import Login from './components/Login'
-import PasswordMissed from './components/PasswordMissed';
-import ResetPassword from './components/ResetPassword';
-import Register from './components/Register';
-import SexeChoice from './components/SexeChoice';
-import Notification from './components/Notification'
-import TestScrolling from './components/TestScrolling'
-import HomepageWoman from './components/HomepageWoman'
-import HomepageKids from './components/HomepageKids'
-import HomepageMan from './components/HomepageMan'
-import HomepageHome from './components/HomepageHome'
-import HomepageBeauty from './components/HomepageBeauty'
-import HomepageHightech from './components/HomepageHightech'
-import HomepageIndex from './components/HomepageIndex'
+import Login from './components/SignIn/Login'
+import PasswordMissed from './components/SignIn/PasswordMissed';
+import ResetPassword from './components/SignIn/ResetPassword';
+import Register from './components/SignIn/Register';
+import SexeChoice from './components/SignIn/SexeChoice';
+import Notification from './components/SignIn/Notification'
+import TestScrolling from './components/SignIn/TestScrolling'
+import HomepageIndex from './components/Homepage/Pages/HomepageIndex'
+import ShoppingBag from './components/Homepage/BottomPages/ShoppingBag'
+import Wishlist from './components/Homepage/BottomPages/Wishlist'
+import Account from './components/Homepage/BottomPages/Account'
 
 const RootStack = createStackNavigator(
   {
@@ -29,17 +25,13 @@ const RootStack = createStackNavigator(
     PasswordMissed: PasswordMissed,
     Notification: Notification,
     SexeChoice: SexeChoice,
-    Homepage: Homepage,
-    HomepageWoman: HomepageWoman,
-    HomepageKids: HomepageKids,
-    HomepageMan: HomepageMan,
-    HomepageHome: HomepageHome,
-    HomepageBeauty: HomepageBeauty,
-    HomepageHightech: HomepageHightech,
-    HomepageIndex: HomepageIndex
+    HomepageIndex: HomepageIndex,
+    ShoppingBag: ShoppingBag,
+    Wishlist: Wishlist,
+    Account: Account
   },
   {
-    initialRouteName: 'HomepageIndex',
+    initialRouteName: 'TestScrolling',
     headerMode: 'none'
   }
 );
