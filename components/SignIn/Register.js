@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {ImageBackground, Text, Button, View, StyleSheet, Image, TextInput, TouchableOpacity} from 'react-native';
+import {ImageBackground, Text, Button, View, StyleSheet, Image, TextInput, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
 import { ScrollView } from 'react-native-gesture-handler';
 
 export default class Register extends React.Component {
     render () {
         return (
-            <ScrollView>
-                <View style={styles.container}>
+                <KeyboardAwareScrollView contentContainerStyle={styles.container}>
                     <View style={styles.backLogo}>
                             <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
                                 <Image 
@@ -82,15 +82,10 @@ export default class Register extends React.Component {
                             style={{borderBottomColor: '#898989', height: 40, width: 104, borderBottomWidth: 1, color: "gray", marginLeft: 20}}
                         />
                     </View>
-                    <View style={styles.registerButton}>
-                        <Button
-                            title="S'enregistrer"
-                            color='#fff'
-                            onPress={() => this.props.navigation.navigate('SexeChoice')}
-                        />
-                    </View>
-                </View>
-            </ScrollView>
+                    <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate('SexeChoice')}>
+                                    <Text style={{color: '#fff'}}>S'enregistrer</Text>
+                    </TouchableOpacity>
+                </KeyboardAwareScrollView>
         )
     }
 }
@@ -146,5 +141,13 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         height: 70,
         marginTop: 10
+    },
+    button2: {
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: '#ff6a8f',
+        width: 180,
+        height: 50,
+        marginBottom: 30
     }
 })

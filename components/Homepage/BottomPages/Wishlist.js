@@ -1,8 +1,7 @@
 import * as React from "react";
-import {StyleSheet, View, ScrollView, Dimensions, Image, ImageBackground, Text, Button, StatusBar, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, ScrollView, Dimensions, Image, ImageBackground, Text, Button, StatusBar, TouchableOpacity, KeyboardAvoidingView} from 'react-native'
 import Header from '../BottomPagesContent/Header'
 import {TextInput } from "react-native-gesture-handler";
-import { bold } from "ansi-colors";
 
 const DEVICE_WIDTH = Dimensions.get("window").width
 const DEVICE_HEIGHT = Dimensions.get("window").height
@@ -10,7 +9,7 @@ const DEVICE_HEIGHT = Dimensions.get("window").height
 export default class Wishlist extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
+            <KeyboardAvoidingView style={styles.container} behavior="position">
                 <Header title="Ma wishlist"/>
                 <View style={styles.content}>
                     <View style={{flex: 1, alignItems: "center", justifyContent:"center", marginTop: 20}}>
@@ -62,7 +61,7 @@ export default class Wishlist extends React.Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         )
     }
 }

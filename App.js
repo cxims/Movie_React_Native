@@ -17,6 +17,9 @@ import ShoppingBag from './components/Homepage/BottomPages/ShoppingBag'
 import Wishlist from './components/Homepage/BottomPages/Wishlist'
 import Account from './components/Homepage/BottomPages/Account'
 
+console.disableYellowBox = true;
+
+
 const RootStack = createStackNavigator(
   {
     TestScrolling: TestScrolling,
@@ -31,7 +34,7 @@ const RootStack = createStackNavigator(
     Account: Account
   },
   {
-    initialRouteName: 'TestScrolling',
+    initialRouteName: 'HomepageIndex',
     headerMode: 'none'
   }
 );
